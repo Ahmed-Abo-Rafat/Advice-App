@@ -1,70 +1,89 @@
-# Getting Started with Create React App
+# Advice App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a single web application app built with react.js and use react hooks that use a random a dvice after fetching data from Rest API. 
 
-## Available Scripts
+## Table of contents
 
-In the project directory, you can run:
+- [Overview](#overview)
+  - [Screenshot](#screenshot)
+  - [The challenge](#the-challenge)
+  - [Live Site](#live-site)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+- [Author](#author)
+- [Acknowledgments](#acknowledgments)
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Overview
 
-### `npm test`
+### Screenshot
+<a href="https://65706c2b13c031758264365d--curious-granita-0591b8.netlify.app/"> 
+  <img
+    src="./assets/advice.PNG"
+    alt="advice app"
+    title="advice app"
+    style="display: inline-block; margin: 0 auto; max-width: 300px"
+ />
+</a>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### The challenge
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Users should be able to:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- View the optimal layout for the app depending on their device's screen size
+- See the animation happen on the advice button after hover on it.
+- Make a FetchData function to fetch data from Rest API.
+- Triger advice after onClick advice button.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Live Site
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Live Site URL: [https://65706c2b13c031758264365d--curious-granita-0591b8.netlify.app/]
+## My process
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Built with
 
-## Learn More
+- React.js
+- React Hooks {useState(), useEfect()}
+- Rest API (Advice Slip JSON API)
+- CSS custom properties
+- Flexbox
+- CSS Grid
+- Mobile-first workflow
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### What I learned
 
-### Code Splitting
+L learned from this app how i fetch data from Reast API to rondam advice by using reack hooks specific useState and useEfect.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+Some of code snippets, see below:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```js
+const fetchData = async () => {
+        const repose = await fetch('https://api.adviceslip.com/advice');
+        const jsonData = await repose.json();
+        setAdvice(jsonData.slip.advice);
+        console.log(advice);
+    }
 
-### Making a Progressive Web App
+    useEffect(() => {
+      fetchData();
+    }, [])
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
+## Author
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- Website - [Ahmed Rafat]( https://ahmed-abo-rafat.github.io/Portfolio/)
+- Linked In - [Ahmed Rafat](https://www.linkedin.com/in/ahmed-rafat-a489301a2/)
+- Twitter - [Ahmed Rafat](https://twitter.com/AR57355660)
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
